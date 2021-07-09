@@ -23,3 +23,16 @@ NodeJS API to load CSV files to Database.
 - IDE
   - [Visual Studio Code](https://code.visualstudio.com) - Flexible IDE to develop in any language.
   - [Sonarlint](https://www.sonarlint.org/vscode) - Detect Code Quality and Code Security issues on the fly.
+
+### STEP 3) Folder Structure
+
+<pre>
+📦src
+ ┣ 📂__tests__          test suites
+ ┣ 📂config             config settings
+ ┣ 📂controllers        api route endpoints
+ ┣ 📂database           database file, seeds and migrations
+ ┣ 📂entities           orm entities to map database table
+ ┣ 📂repositories       entity managers
+ ┣ 📂services           business logic
+</pre>
