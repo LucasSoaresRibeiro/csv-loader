@@ -32,8 +32,13 @@ class VehiclesController {
                 });
                 
                 // store at database
-                await vehicleRepository.save(vehicle);
-                console.log("DEBUG: Line saved!");
+                try {
+                    await vehicleRepository.save(vehicle);
+                    console.log("DEBUG: Line saved!");
+                } catch (error) {
+                    console.error("DEBUG: Fail to save!");
+                    console.error(error);
+                }
 
             },
             complete: function(results) {

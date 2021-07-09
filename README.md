@@ -71,6 +71,8 @@ ts-node ./node_modules/typeorm/cli.js  migration:generate -n CreateVehicleTable
 npm run migrations
 ```
 
+Example using a local file database (the final version is using memory database):
+
 ![image](/readme_images/database_migration.jpg)
 
 ### STEP 6) Create upload route with multer

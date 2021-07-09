@@ -1,6 +1,6 @@
 {
     "type": "sqlite",
-    "database": "./src/database/database.sqlite",
+    "database": ":memory:",
     "migrations": [
         "./src/database/migrations/**.ts"
     ],
@@ -9,5 +9,7 @@
     ],
     "cli": {
         "migrationsDir": "./src/database/migrations"
-    }
+    },
+    "synchronize": true,
+    "logging": true
 }
