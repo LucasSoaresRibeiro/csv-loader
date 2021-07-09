@@ -105,3 +105,4 @@ dist
 __temp__/*
 package-lock.json
 uploads/*
+src/database/database.sqlite

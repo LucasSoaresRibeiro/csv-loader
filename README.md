@@ -17,9 +17,9 @@ NodeJS API to load CSV files to Database.
   - [Express](http://expressjs.com) - Popular web framework for NodeJS.
   - [TypeORM](https://typeorm.io) - ORM to help and padronize database manipulation in NodeJS.
   - [Multer](https://www.npmjs.com/package/multer) - NodeJS middleware for uploading files.
-  - [Swagger](https://swagger.io) - Good to generate project documentation.
   - [Jest](https://jestjs.io) - Javascript testing framework with a focus on simplicity.
   - [Supertest](https://www.npmjs.com/package/supertest) - Module to crete HTTP tests.
+  - [Swagger](https://swagger.io) - Good to generate project documentation.
 
 - IDE
   - [Visual Studio Code](https://code.visualstudio.com) - Flexible IDE to develop in any language.
@@ -38,7 +38,7 @@ NodeJS API to load CSV files to Database.
  ┣ 📂repositories       entity managers
 </pre>
 
-### STEP 4) Install npm packages
+### STEP 4) Setup NodeJS project
 
 ![image](/readme_images/first_run.jpg)
 
@@ -65,3 +65,13 @@ npm run migrations
 Testing upload a CSV with Postman:
 
 ![image](/readme_images/upload_csv_to_backend.jpg)
+
+### STEP 7) Open CSV file and load to database
+
+![image](/readme_images/load_csv_to_database.jpg)
+
+### STEP 8) Write tests
+
+### STEP ...) TODO:
+
+- Add Swagger documentation
