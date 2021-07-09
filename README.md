@@ -40,3 +40,22 @@ NodeJS API to load CSV files to Database.
 
 ### STEP 4) Install npm packages
 
+![image](/readme_images/first_run.jpg)
+
+### STEP 5) Create database structure
+
+- Create entity Vehicle.ts
+
+- Generate migration:
+
+```shell
+ts-node ./node_modules/typeorm/cli.js  migration:generate -n CreateVehicleTable
+```
+
+- Run migration to create database and Vehicles table:
+
+```shell
+npm run migrations
+```
+
+![image](/readme_images/database_migration.jpg)
