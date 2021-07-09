@@ -19,6 +19,7 @@ NodeJS API to load CSV files to Database.
   - [Multer](https://www.npmjs.com/package/multer) - NodeJS middleware for uploading files.
   - [Swagger](https://swagger.io) - Good to generate project documentation.
   - [Jest](https://jestjs.io) - Javascript testing framework with a focus on simplicity.
+  - [Supertest](https://www.npmjs.com/package/supertest) - Module to crete HTTP tests.
 
 - IDE
   - [Visual Studio Code](https://code.visualstudio.com) - Flexible IDE to develop in any language.
@@ -36,3 +37,6 @@ NodeJS API to load CSV files to Database.
  ┣ 📂repositories       entity managers
  ┣ 📂services           business logic
 </pre>
+
+### STEP 4) Install npm packages
+
