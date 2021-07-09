@@ -21,7 +21,7 @@ class VehiclesController {
             worker: true,
             header: true,
             delimiter: ";",
-            step: function(results) {
+            step: async function(results) {
 
                 console.log("DEBUG: Saving this line...");
                 console.log(results.data);
@@ -32,7 +32,7 @@ class VehiclesController {
                 });
                 
                 // store at database
-                vehicleRepository.save(vehicle);
+                await vehicleRepository.save(vehicle);
                 console.log("DEBUG: Line saved!");
 
             },
