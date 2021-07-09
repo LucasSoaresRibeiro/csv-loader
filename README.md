@@ -1,6 +1,18 @@
 # CSV LOADER TO DATABASE
 NodeJS API to load CSV files to Database.
 
+## TABLE OF CONTENTS
+  - [DEVELOPMENT STEPS](#development-steps)
+    - [STEP 1) Understand Business Requirements](#step-1-understand-business-requirements)
+    - [STEP 2) Choose appropriate framework and libraries](#step-2-choose-appropriate-framework-and-libraries)
+    - [STEP 3) Define the folder Structure](#step-3-define-the-folder-structure)
+    - [STEP 4) Setup NodeJS project](#step-4-setup-nodejs-project)
+    - [STEP 5) Create database structure](#step-5-create-database-structure)
+    - [STEP 6) Create upload route with multer](#step-6-create-upload-route-with-multer)
+    - [STEP 7) Open CSV file and load to database using papaparse](#step-7-open-csv-file-and-load-to-database-using-papaparse)
+    - [STEP 8) Test upload endpoint with Jest and Supertest](#step-8-test-upload-endpoint-with-jest-and-supertest)
+    - [NEXT STEPS)](#next-steps)
+
 ## DEVELOPMENT STEPS
 
 ### STEP 1) Understand Business Requirements
@@ -27,7 +39,7 @@ NodeJS API to load CSV files to Database.
   - [Sonarlint](https://www.sonarlint.org/vscode) - Detect Code Quality and Code Security issues on the fly.
   - [Postman](https://www.postman.com) - To test API endpoint and upload csv files.
 
-### STEP 3) Folder Structure
+### STEP 3) Define the folder Structure
 
 <pre>
 📦src
@@ -75,7 +87,7 @@ Testing upload a CSV with Postman:
 
 ![image](/readme_images/out_tests.jpg)
 
-### STEP ...) TODO:
+### NEXT STEPS)
 
 - Add Swagger documentation
 - Delete uploaded CSVs
