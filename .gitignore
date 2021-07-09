@@ -104,3 +104,4 @@ dist
 .tern-port
 __temp__/*
 package-lock.json
+uploads/*

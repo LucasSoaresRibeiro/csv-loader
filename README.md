@@ -24,6 +24,7 @@ NodeJS API to load CSV files to Database.
 - IDE
   - [Visual Studio Code](https://code.visualstudio.com) - Flexible IDE to develop in any language.
   - [Sonarlint](https://www.sonarlint.org/vscode) - Detect Code Quality and Code Security issues on the fly.
+  - [Postman](https://www.postman.com) - To test API endpoint and upload csv files.
 
 ### STEP 3) Folder Structure
 
@@ -35,7 +36,6 @@ NodeJS API to load CSV files to Database.
  ┣ 📂database           database file, seeds and migrations
  ┣ 📂entities           orm entities to map database table
  ┣ 📂repositories       entity managers
- ┣ 📂services           business logic
 </pre>
 
 ### STEP 4) Install npm packages
@@ -59,3 +59,9 @@ npm run migrations
 ```
 
 ![image](/readme_images/database_migration.jpg)
+
+### STEP 6) Create upload route with multer
+
+Testing upload a CSV with Postman:
+
+![image](/readme_images/upload_csv_to_backend.jpg)
