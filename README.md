@@ -93,4 +93,5 @@ Testing upload a CSV with Postman:
 
 - Add Swagger documentation
 - Delete uploaded CSVs
+- Test different csv schemas
 - Improve tests with database migrations and connection management
