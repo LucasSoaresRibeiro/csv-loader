@@ -1,7 +1,7 @@
 import request from "supertest";
 import { app } from "../app";
 
-const csvPath = `${__dirname}/data/vehicles.csv`;
+const csvPath = `${__dirname}/../../data/vehicles.csv`;
 
 describe("Vehicles", () => {
 

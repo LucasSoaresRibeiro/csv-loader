@@ -10,42 +10,45 @@ class VehiclesController {
 
         console.log("DEBUG: Request received!");
 
-        const csvUploadedFileName = request.file.filename
-        const csvPath = `${__dirname}/../../uploads/${csvUploadedFileName}`;
-        const vehicleRepository = getCustomRepository(VehiclesRepository);
+        try {
 
-        console.log(`DEBUG: Opening this csv file: ${csvPath}`);
+            const csvUploadedFileName = request.file.filename
+            const csvPath = `${__dirname}/../../uploads/${csvUploadedFileName}`;
+            const vehicleRepository = getCustomRepository(VehiclesRepository);
 
-        const file = fs.createReadStream(csvPath);
-        papa.parse(file, {
-            worker: true,
-            header: true,
-            delimiter: ";",
-            step: async function(results) {
+            console.log(`DEBUG: Opening this csv file: ${csvPath}`);
 
-                console.log("DEBUG: Saving this line...");
-                console.log(results.data);
-                
-                // assuming csv will always have a header with the same column database name
-                const vehicle = vehicleRepository.create({
-                    ...results.data
-                });
-                
-                // store at database
-                try {
+            const file = fs.createReadStream(csvPath);
+            papa.parse(file, {
+                worker: true,
+                header: true,
+                delimiter: ";",
+                step: async function(results) {
+
+                    console.log("DEBUG: Saving this line...");
+                    console.log(results.data);
+                    
+                    // assuming csv will always have a header with the same column database name
+                    const vehicle = vehicleRepository.create({
+                        ...results.data
+                    });
+                    
+                    // store at database
                     await vehicleRepository.save(vehicle);
                     console.log("DEBUG: Line saved!");
-                } catch (error) {
-                    console.error("DEBUG: Fail to save!");
-                    console.error(error);
-                }
 
-            },
-            complete: function(results) {
-                console.log("DEBUG: Completed!");
-                return response.status(200).json({status: "completed"});
-            }
-        });
+                },
+                complete: function(results) {
+                    console.log("DEBUG: Completed!");
+                    return response.status(200).json({status: "completed"});
+                }
+            });
+
+        } catch (error) {
+            console.error("DEBUG: Fail to save!");
+            console.error(error);
+            return response.status(500).json({status: "failed"});
+        }
 
     }
 

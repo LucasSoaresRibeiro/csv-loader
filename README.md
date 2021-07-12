@@ -1,5 +1,5 @@
 # CSV LOADER TO DATABASE
-NodeJS API to load CSV files to Database.
+NodeJS API to load CSV files to a Database.
 
 ## TABLE OF CONTENTS
   - [DEVELOPMENT STEPS](#development-steps)
@@ -13,11 +13,48 @@ NodeJS API to load CSV files to Database.
     - [STEP 8) Test upload endpoint with Jest and Supertest](#step-8-test-upload-endpoint-with-jest-and-supertest)
     - [NEXT STEPS)](#next-steps)
 
+## COMMANDS
+
+### Build
+```
+npm install
+```
+
+### Run
+```
+npm run dev
+```
+
+### Test endpoint (Curl command example)
+```
+curl -F "csv=@vehicles.csv" http://localhost:3333/csvtodatabase
+```
+
+## ENDPOINT DETAILS
+
+Name: csvtodatabase
+Url: http://localhost:3333/csvtodatabase
+Method: POST
+Parameter: CSV (file with vehicles data)
+Response codes:
+
+- Status code: 200
+  - JSON: {status: "completed"}
+  - Detail: Records successfully inserted into the database.
+
+- Status code: 500
+  - JSON: {status: "failed"}
+  - Detail: Operation failed. See log errors for more details.
+
+## BIG FILES AND MEMORY CONSIDERATIONS
+
+This implementation uses Papa Parse for optimized handling of large csv files and inserts one record at a time into the database to avoid memory overhead during the option and ensure maximum records will be inserted in case of partial failure.
+
 ## DEVELOPMENT STEPS
 
 ### STEP 1) Understand Business Requirements
 - Read and understand the project requirements.
-- Think if all collected informations are enough to start the sprint.
+- Think if the information is enough to start implementing or define missing requirements first.
 
 ### STEP 2) Choose appropriate framework and libraries
 
@@ -30,9 +67,6 @@ NodeJS API to load CSV files to Database.
   - [TypeORM](https://typeorm.io) - ORM to help and padronize database manipulation in NodeJS.
   - [Multer](https://www.npmjs.com/package/multer) - NodeJS middleware for uploading files.
   - [Papa Parse](https://www.papaparse.com) - Powerful CSV parser.
-  - [Jest](https://jestjs.io) - Javascript testing framework with a focus on simplicity.
-  - [Supertest](https://www.npmjs.com/package/supertest) - Module to crete HTTP tests.
-  - [Swagger](https://swagger.io) - Good to generate project documentation.
 
 - IDE
   - [Visual Studio Code](https://code.visualstudio.com) - Flexible IDE to develop in any language.
@@ -61,13 +95,13 @@ NodeJS API to load CSV files to Database.
 
 - Generate migration:
 
-```shell
+```
 ts-node ./node_modules/typeorm/cli.js  migration:generate -n CreateVehicleTable
 ```
 
 - Run migration to create database and Vehicles table:
 
-```shell
+```
 npm run migrations
 ```
 
@@ -91,7 +125,10 @@ Testing upload a CSV with Postman:
 
 ### NEXT STEPS)
 
+- Finish automated tests
+  - [Jest](https://jestjs.io) - Javascript testing framework with a focus on simplicity.
+  - [Supertest](https://www.npmjs.com/package/supertest) - Module to crete HTTP tests.
 - Add Swagger documentation
+  - [Swagger](https://swagger.io) - Good to generate project documentation.
 - Delete uploaded CSVs
 - Test different csv schemas
-- Improve tests with database migrations and connection management
