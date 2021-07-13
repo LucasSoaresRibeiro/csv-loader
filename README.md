@@ -102,6 +102,7 @@ This implementation uses Papa Parse for optimized handling of large csv files an
  ┣ 📂database           database file, seeds and migrations
  ┣ 📂entities           orm entities to map database table
  ┣ 📂repositories       entity managers
+ ┣ 📂services           business logic
 </pre>
 
 ### STEP 4) Setup NodeJS project
