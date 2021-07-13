@@ -43,6 +43,8 @@ npm test
 ```
 ![image](/readme_images/out_tests.jpg)
 
+NOTE: An automated test creates a file database. When running the server, a memory database is created.
+
 ## ENDPOINT DETAILS
 
 - Name: csvtodatabase
@@ -80,8 +82,8 @@ This implementation uses Papa Parse for optimized handling of large csv files an
   - [TypeORM](https://typeorm.io) - ORM to help and padronize database manipulation in NodeJS.
   - [Multer](https://www.npmjs.com/package/multer) - NodeJS middleware for uploading files.
   - [Papa Parse](https://www.papaparse.com) - Powerful CSV parser.
-  - [Mocha](https://jestjs.io) - Javascript testing framework with a focus on simplicity.
-  - [Supertest](https://www.npmjs.com/package/supertest) - Module to crete HTTP tests.
+  - [Mocha](https://mochajs.org/) - Javascript testing framework.
+  - [Supertest](https://www.npmjs.com/package/supertest) - Module to create HTTP tests.
 
 - IDE
   - [Visual Studio Code](https://code.visualstudio.com) - Flexible IDE to develop in any language.
