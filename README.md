@@ -6,6 +6,7 @@ NodeJS API to load CSV files to a Database.
     - [Build](#build)
     - [Run](#run)
     - [Test endpoint (Curl command example)](#test-endpoint-curl-command-example)
+    - [Run automated tests](#run-automated-tests)
   - [ENDPOINT DETAILS](#endpoint-details)
   - [BIG FILES AND MEMORY CONSIDERATIONS](#big-files-and-memory-considerations)
   - [DEVELOPMENT STEPS](#development-steps)
@@ -16,6 +17,7 @@ NodeJS API to load CSV files to a Database.
     - [STEP 5) Create database structure](#step-5-create-database-structure)
     - [STEP 6) Create upload route with multer](#step-6-create-upload-route-with-multer)
     - [STEP 7) Open CSV file and load to database using papaparse](#step-7-open-csv-file-and-load-to-database-using-papaparse)
+    - [STEP 8) Add endpoint test with Mocha and Supertest](#step-8-add-endpoint-test-with-mocha-and-supertest)
     - [NEXT STEPS)](#next-steps)
 
 ## COMMANDS
