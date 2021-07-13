@@ -37,6 +37,12 @@ curl -F "csv=@vehicles.csv" http://localhost:3333/csvtodatabase
 ```
 ![image](/readme_images/command_curl_test.jpg)
 
+### Run automated tests
+```
+npm test
+```
+![image](/readme_images/out_tests.jpg)
+
 ## ENDPOINT DETAILS
 
 - Name: csvtodatabase
@@ -50,7 +56,7 @@ curl -F "csv=@vehicles.csv" http://localhost:3333/csvtodatabase
     - Detail: Records successfully inserted into the database.
 
   - Status code: 500
-    - JSON: {status: "failed"}
+    - JSON: {status: "error", "message": "[Error details]"}
     - Detail: Operation failed. See log errors for more details.
 
 ## BIG FILES AND MEMORY CONSIDERATIONS
@@ -74,6 +80,8 @@ This implementation uses Papa Parse for optimized handling of large csv files an
   - [TypeORM](https://typeorm.io) - ORM to help and padronize database manipulation in NodeJS.
   - [Multer](https://www.npmjs.com/package/multer) - NodeJS middleware for uploading files.
   - [Papa Parse](https://www.papaparse.com) - Powerful CSV parser.
+  - [Mocha](https://jestjs.io) - Javascript testing framework with a focus on simplicity.
+  - [Supertest](https://www.npmjs.com/package/supertest) - Module to crete HTTP tests.
 
 - IDE
   - [Visual Studio Code](https://code.visualstudio.com) - Flexible IDE to develop in any language.
@@ -126,16 +134,23 @@ Testing upload a CSV with Postman:
 
 ![image](/readme_images/load_csv_to_database.jpg)
 
-### NEXT STEPS)
+### STEP 8) Add endpoint test with Mocha and Supertest
 
-- Test upload endpoint with Jest and Supertest (Parcially implemented)
-  - [Jest](https://jestjs.io) - Javascript testing framework with a focus on simplicity.
-  - [Supertest](https://www.npmjs.com/package/supertest) - Module to crete HTTP tests.
-  - ![image](/readme_images/out_tests.jpg)
+Test location:
+```
+src\__tests__\Vehicle.test.ts
+```
+
+```
+npm test
+```
+
+![image](/readme_images/out_tests.jpg)
+
+### NEXT STEPS)
 
 - Add Swagger documentation
   - [Swagger](https://swagger.io) - Good to generate project documentation.
-
 - Delete uploaded CSVs
-
 - Test different csv schemas
+- Load test into a database

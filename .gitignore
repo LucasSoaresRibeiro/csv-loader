@@ -106,3 +106,4 @@ __temp__/*
 package-lock.json
 uploads/*
 src/database/database.sqlite
+src/database/database.test.sqlite
